@@ -1,5 +1,5 @@
-const MATTER_PORT = 6000;
 const NAME = 'Platform';
+const MATTER_PORT = 6000;
 
 import { jest } from '@jest/globals';
 import { PlatformConfig } from 'matterbridge';
