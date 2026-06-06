@@ -1,7 +1,7 @@
 const NAME = 'Platform';
 const MATTER_PORT = 6000;
 
-import { PlatformConfig, PlatformMatterbridge } from 'matterbridge';
+import type { PlatformConfig, PlatformMatterbridge } from 'matterbridge';
 import { log, loggerInfoSpy, setDebug, setupTest } from 'matterbridge/vitest-utils';
 import {
   addMatterbridge,
@@ -17,7 +17,7 @@ import initializePlugin, { Automations } from '../src/module.js';
 
 await setupTest(NAME);
 
-describe('TestPlatform', async () => {
+describe('TestPlatform', () => {
   let matterbridge: PlatformMatterbridge;
   let platform: Automations;
 
@@ -87,7 +87,7 @@ describe('TestPlatform', async () => {
     await platform.onStart();
     expect(loggerInfoSpy).toHaveBeenCalledWith('onStart called with reason: No reason provided');
 
-    const unregisterSpy = vi.spyOn(platform, 'unregisterAllDevices').mockResolvedValue(undefined);
+    const unregisterSpy = vi.spyOn(platform, 'unregisterAllDevices').mockResolvedValue();
     platform.config.unregisterOnShutdown = true;
     await platform.onShutdown();
     expect(loggerInfoSpy).toHaveBeenCalledWith('onShutdown called with reason: No reason provided');

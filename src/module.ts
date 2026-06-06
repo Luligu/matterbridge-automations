@@ -1,5 +1,6 @@
-import { MatterbridgeDynamicPlatform, PlatformConfig, PlatformMatterbridge } from 'matterbridge';
-import { AnsiLogger } from 'matterbridge/logger';
+import { MatterbridgeDynamicPlatform } from 'matterbridge';
+import type { PlatformConfig, PlatformMatterbridge } from 'matterbridge';
+import { type AnsiLogger } from 'matterbridge/logger';
 
 /**
  * This is the standard interface for Matterbridge plugins.
@@ -41,6 +42,6 @@ export class Automations extends MatterbridgeDynamicPlatform {
   override async onShutdown(reason?: string): Promise<void> {
     await super.onShutdown(reason);
     this.log.info(`onShutdown called with reason: ${reason ?? 'No reason provided'}`);
-    if (this.config.unregisterOnShutdown === true) await this.unregisterAllDevices();
+    if (this.config.unregisterOnShutdown) await this.unregisterAllDevices();
   }
 }
