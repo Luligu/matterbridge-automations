@@ -13,16 +13,16 @@ import {
   stopServerNode,
 } from 'matterbridge/vitest-utils/matter';
 
-import initializePlugin, { Automations } from '../src/module.js';
+import initializePlugin, { AutomationsPlatform } from '../src/module.js';
 
 await setupTest(NAME);
 
 describe('TestPlatform', () => {
   let matterbridge: PlatformMatterbridge;
-  let platform: Automations;
+  let platform: AutomationsPlatform;
 
   const config: PlatformConfig = {
-    name: 'matterbridge-tuya',
+    name: 'matterbridge-automations',
     type: 'DynamicPlatform',
     version: '1.0.0',
     debug: false,
@@ -62,7 +62,7 @@ describe('TestPlatform', () => {
   });
 
   it('should initialize platform with config name', () => {
-    platform = new Automations(matterbridge, log, config);
+    platform = new AutomationsPlatform(matterbridge, log, config);
     addMatterbridge(platform);
     expect(loggerInfoSpy).toHaveBeenCalledWith(`Initializing platform: ${config.name}`);
     expect(loggerInfoSpy).toHaveBeenCalledWith(`Finished initializing platform: ${config.name}`);
@@ -83,7 +83,12 @@ describe('TestPlatform', () => {
     expect(loggerInfoSpy).toHaveBeenCalledWith('onShutdown called with reason: Test reason');
   });
 
-  it('should call unregister devices if configured', async () => {
+  it('should restart and unregister devices if configured', async () => {
+    platform = new AutomationsPlatform(matterbridge, log, config);
+    addMatterbridge(platform);
+    expect(loggerInfoSpy).toHaveBeenCalledWith(`Initializing platform: ${config.name}`);
+    expect(loggerInfoSpy).toHaveBeenCalledWith(`Finished initializing platform: ${config.name}`);
+
     await platform.onStart();
     expect(loggerInfoSpy).toHaveBeenCalledWith('onStart called with reason: No reason provided');
 

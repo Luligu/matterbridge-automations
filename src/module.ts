@@ -9,13 +9,13 @@ import type { AnsiLogger } from 'matterbridge/logger';
  * @param {PlatformMatterbridge} matterbridge - An instance of MatterBridge. This is the main interface for interacting with the MatterBridge system.
  * @param {AnsiLogger} log - An instance of AnsiLogger. This is used for logging messages in a format that can be displayed with ANSI color codes.
  * @param {PlatformConfig} config - The platform configuration.
- * @returns {Automations} - An instance of the Automations. This is the main interface for interacting with the Somfy Tahoma system.
+ * @returns {AutomationsPlatform} - An instance of the AutomationsPlatform. This is the main interface for interacting with the Somfy Tahoma system.
  */
-export default function initializePlugin(matterbridge: PlatformMatterbridge, log: AnsiLogger, config: PlatformConfig): Automations {
-  return new Automations(matterbridge, log, config);
+export default function initializePlugin(matterbridge: PlatformMatterbridge, log: AnsiLogger, config: PlatformConfig): AutomationsPlatform {
+  return new AutomationsPlatform(matterbridge, log, config);
 }
 
-export class Automations extends MatterbridgeDynamicPlatform {
+export class AutomationsPlatform extends MatterbridgeDynamicPlatform {
   constructor(matterbridge: PlatformMatterbridge, log: AnsiLogger, config: PlatformConfig) {
     super(matterbridge, log, config);
 
