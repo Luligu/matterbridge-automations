@@ -34,7 +34,7 @@ describe('TestPlatform', () => {
     await createTestEnvironment();
     await createServerNode(MATTER_PORT);
     await startServerNode();
-    matterbridge = await getMatterbridge();
+    matterbridge = getMatterbridge();
   });
 
   beforeEach(() => {
