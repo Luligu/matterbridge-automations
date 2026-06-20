@@ -12,12 +12,12 @@ If you like this project and find it useful, please consider giving it a star on
 
 ### Breaking changes
 
-- Require matterbridge v.3.8.0 with matter v.1.5.1 and matter.js v.0.17.1.
+- Require matterbridge v.3.9.0 with matter v.1.5.1 and matter.js v.0.17.1.
 
 ### Changed
 
 - Update dependencies.
-- Bump package to `automator` v.3.1.11.
+- [package]: Bump package to `automator` v.3.1.12 and the [new toolchain](README.md#repository-setup).
 
 <a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
 
