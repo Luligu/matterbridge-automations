@@ -16,8 +16,8 @@ If you like this project and find it useful, please consider giving it a star on
 
 ### Changed
 
-- Update dependencies.
-- [package]: Bump package to `automator` v.3.1.12 and the [new toolchain](README.md#repository-setup).
+- [package]: Upgrade package.
+- [package]: Update dependencies.
 
 <a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
 
