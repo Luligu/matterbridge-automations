@@ -28,7 +28,7 @@ If you like this project and find it useful, please consider giving it a star on
 
 <a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="120"></a>
 
-## [0.0.2] - Dev branch
+## [0.0.2] - 2026-07-17
 
 ### Breaking changes
 
@@ -39,6 +39,7 @@ If you like this project and find it useful, please consider giving it a star on
 - [package]: Apply uniform style.
 - [package]: Upgrade package.
 - [package]: Update dependencies.
+- [toolchain]: Migrate to the native toolchain (tsgo + oxlint + oxfmt + vitest). Replace ESLint/Prettier with Oxc, migrate the unit tests from Jest to Vitest, and move them from `src/` to `vitest/`.
 
 <a href="https://www.buymeacoffee.com/luligugithub"><img src="https://matterbridge.io/assets/bmc-button.svg" alt="Buy me a coffee" width="80"></a>
 
